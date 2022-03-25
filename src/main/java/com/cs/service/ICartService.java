@@ -9,8 +9,8 @@ public interface ICartService
 	Cart removeGardenDecorFromCart(int cartId, int gardenDecorId);
 	/*Cart addSeedToCart(int cartId, int seedId);
 	Cart removeSeedFromCart(int cartId, int seedId);
-	Cart addPlantToCart(int cartId, int PlantId);
-	Cart removePlantFromCart(int cartId, int PlantId);
+	Cart addPlantToCart(int cartId, int plantId);
+	Cart removePlantFromCart(int cartId, int plantId);
 	Cart addFertilizerToCart(int cartId, int fertilizerId);
 	Cart removeFertilizerFromCart(int cartId, int fertilizerId);
 	Cart addPlanterToCart(int cartId, int planterId);

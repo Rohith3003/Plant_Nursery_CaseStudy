@@ -2,10 +2,10 @@ package com.cs.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.cs.bean.Customer;
+import com.cs.bean.EndUser;
 
 
 @Repository
-public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
+public interface IEndUserRepository extends JpaRepository<EndUser, Integer> {
 
 }

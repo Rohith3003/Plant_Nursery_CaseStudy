@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer 
+public class EndUser 
 {	
 	@Id
 	@GeneratedValue
