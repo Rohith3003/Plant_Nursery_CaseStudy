@@ -64,13 +64,17 @@ public class GardenDecorServiceImpl implements IGardenDecorService
 	@Override
 	public GardenDecor updateGardenDecorNameById(int id, int gardenDecorId, String gardenDecorName) 
 	{
-		EndUser endUser = endUserRepo.getById(id);
+		Optional<EndUser> endUser = endUserRepo.findById(id);
 		Optional<GardenDecor> gardenDecor = gardenDecorRepo.findById(gardenDecorId);
-		if(!endUser.getRole().equals("admin"))
+		if(!endUser.isPresent())
+		{
+			throw new GardenDecorException("admin not found with the given id:" + id);
+		}
+		if(!endUser.get().getRole().equals("admin"))
 		{
 			throw new GardenDecorException("only admin can update garden decor in the database");
 		}
-		else if(!endUser.getLogin().isLogin())
+		else if(!endUser.get().getLogin().isLogin())
 		{
 			throw new GardenDecorException("first login to update garden decor in the database");
 		}
