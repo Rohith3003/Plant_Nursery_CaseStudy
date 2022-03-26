@@ -1,6 +1,6 @@
 package com.onlineplantnursery.bean;
 
-import javax.persistence.Entity;
+/*import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
@@ -8,12 +8,25 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import lombok.AllArgsConstructor;
-//import lombok.Data;
+import lombok.AllArgsConstructor;*/
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.checkerframework.checker.units.qual.min;
+import org.hibernate.validator.constraints.URL;
+
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-//@Data
+@Data
 //@AllArgsConstructor
 //@NoArgsConstructor
 public class Seed {
@@ -22,20 +35,16 @@ public class Seed {
 	@GeneratedValue
 	private int seedId;
 	
-	//name should not be empty
-	//name should have at least 2 characters
-
-	
 	@NotEmpty
 	@Size(min=4, message="Seed name should have atleast 4 characters")
 	private String name;
 	
-	@NotEmpty
-	@Size(min=1, message="Price should not be less than Rs. 1")
+	@NotNull
+	@Min(1)
 	private double price;
 	
-	@NotEmpty
-	@Size(min=1, message="Number of seeds per packet should not be less than 1")
+	@NotNull
+	@Min(1)
 	private int numberOfSeeds;
 	
 	
